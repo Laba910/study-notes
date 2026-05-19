@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Study Notes Auto-Save",
+  "version": "1.0",
+  "description": "ChatGPT/Gemini 대화를 GitHub에 자동 저장",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": [
+    "https://chatgpt.com/*",
+    "https://chat.openai.com/*",
+    "https://gemini.google.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*",
+        "https://gemini.google.com/*"
+      ],
+      "js": ["content.js"]
+    }
+  ]
+}
